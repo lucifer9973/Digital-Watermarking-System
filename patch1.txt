@@ -1,0 +1,210 @@
+<title>Digital Watermarking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:disabled {
+            background-color: #ccc;
+        }
+        .result-container {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        .result-image {
+            max-width: 100%;
+            margin: 10px 0;
+        }
+        .metrics {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            font-size: 0.9em;
+            text-align: left;
+        }
+        .metrics h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .metrics p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .alpha-value {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #e3f2fd;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .error {
+            color: #f44336;
+            background: #ffebee;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .image-preview {
+            margin-top: 10px;
+            max-width: 100%;
+            max-height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+=======
+<head>
+    <title>Digital Watermarking System</title>
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            max-width: 900px;
+            margin: 30px auto;
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .section {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .btn {
+            width: 100%;
+            font-weight: 600;
+        }
+        .result-container {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        .result-image {
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .alpha-value {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #e6f1ff;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #2a61b8;
+        }
+        .error {
+            color: #b00020;
+            background: #f9d6d5;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            display: none;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2a61b8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .image-preview {
+            margin-top: 10px;
+            max-width: 100%;
+            max-height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            display: none;
+        }
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .row {
+                display: flex;
+                gap: 30px;
+            }
+            .section {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
