@@ -52,7 +52,6 @@ def create_app():
              session_cookie_secure=False,  # Set to True with HTTPS
              session_cookie_http_only=True,
              frame_options='DENY',
-             content_type_nosniff=True,
              x_content_type_options='nosniff',
              referrer_policy='strict-origin-when-cross-origin'
     )
