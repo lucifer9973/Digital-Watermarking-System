@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Watermarking System</title>
-    <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
     <style>
         * {
             margin: 0;
@@ -29,7 +23,6 @@
             min-height: 100vh;
         }
 
-        /* Animated Background */
         .background-animation {
             position: fixed;
             top: 0;
@@ -37,10 +30,9 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.3;
         }
 
-        /* Header */
         .header {
             text-align: center;
             padding: 60px 20px 40px;
@@ -74,7 +66,6 @@
             background-clip: text;
             animation: gradientShift 4s ease-in-out infinite;
             margin-bottom: 10px;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
 
         @keyframes gradientShift {
@@ -90,32 +81,6 @@
             margin-bottom: 20px;
         }
 
-        .tech-stack {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .tech-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: #00d4ff;
-            transition: all 0.3s ease;
-        }
-
-        .tech-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
-        }
-
-        /* Main Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -136,7 +101,6 @@
             }
         }
 
-        /* Section Cards */
         .section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -176,7 +140,6 @@
             color: #00d4ff;
             margin-bottom: 20px;
             text-align: center;
-            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
         }
 
         .section-title {
@@ -187,7 +150,6 @@
             color: #ffffff;
         }
 
-        /* Form Elements */
         .form-group {
             margin-bottom: 25px;
             position: relative;
@@ -211,21 +173,6 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-        }
-
-        .file-upload-area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .file-upload-area:hover::before {
-            left: 100%;
         }
 
         .file-upload-area:hover {
@@ -277,38 +224,16 @@
             color: #00d4ff;
         }
 
-        /* Image Preview */
-        .image-preview-container {
-            margin-top: 20px;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         .image-preview {
             width: 100%;
-            height: 200px;
+            max-height: 250px;
             object-fit: cover;
             display: none;
-            transition: all 0.3s ease;
+            margin-top: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
-        .preview-overlay {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #00d4ff;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* Alpha Input */
         .alpha-input-group {
             display: flex;
             align-items: center;
@@ -333,12 +258,6 @@
             background: #ffffff;
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .alpha-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
         }
 
         .alpha-value {
@@ -349,10 +268,8 @@
             font-size: 1.1rem;
         }
 
-        /* Buttons */
         .btn {
             background: linear-gradient(45deg, #bb86fc 0%, #00d4ff 100%);
-            background-size: 200% 200%;
             color: #1a1a2e;
             border: none;
             padding: 16px 32px;
@@ -368,23 +285,7 @@
             letter-spacing: 1px;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
         .btn:hover {
-            background-position: right center;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(187, 134, 252, 0.4);
         }
@@ -399,19 +300,11 @@
             background: linear-gradient(45deg, #ff6b9d 0%, #ff9a8b 100%);
         }
 
-        .btn.processing::after {
-            content: '';
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid #ffffff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-left: 10px;
-            display: inline-block;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        /* Progress Bar */
         .progress-container {
             margin-top: 20px;
             display: none;
@@ -440,10 +333,365 @@
             font-size: 0.9rem;
         }
 
-        /* Results */
         .result-container {
             margin-top: 30px;
             padding: 30px;
             background: rgba(0, 212, 255, 0.05);
             border: 1px solid rgba(0, 212, 255, 0.2);
             border-radius: 16px;
+            display: none;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 20px;
+        }
+
+        .result-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .alpha-display {
+            text-align: center;
+            padding: 15px;
+            background: rgba(187, 134, 252, 0.1);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .alpha-display-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .alpha-display-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #bb86fc;
+        }
+
+        .error-message {
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            color: #ff6b9d;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #bb86fc;
+            background: rgba(187, 134, 252, 0.1);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="particlesContainer"></div>
+
+    <div class="header">
+        <h1 class="title">Digital Watermarking System</h1>
+        <p class="subtitle">Secure Your Digital Content with Advanced Watermarking</p>
+    </div>
+
+    <div class="container">
+        <div class="sections-grid">
+            <!-- Embed Section -->
+            <div class="section">
+                <div class="section-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h2 class="section-title">Embed Watermark</h2>
+
+                <form id="embedForm">
+                    <div class="form-group">
+                        <label class="form-label">Cover Image</label>
+                        <div class="file-upload-area" id="coverUploadArea">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Click or drag image here</p>
+                            <p class="upload-subtext">PNG, JPG up to 10MB</p>
+                            <input type="file" id="coverImage" class="file-input" name="cover" accept="image/*">
+                        </div>
+                        <div class="file-name" id="coverFileName"></div>
+                        <img id="coverPreview" class="image-preview">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Watermark Image</label>
+                        <div class="file-upload-area" id="watermarkUploadArea">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Click or drag image here</p>
+                            <p class="upload-subtext">PNG, JPG up to 10MB</p>
+                            <input type="file" id="watermarkImage" class="file-input" name="watermark" accept="image/*">
+                        </div>
+                        <div class="file-name" id="watermarkFileName"></div>
+                        <img id="watermarkPreview" class="image-preview">
+                    </div>
+
+                    <button type="submit" class="btn" id="embedBtn">Embed Watermark</button>
+                    <div class="progress-container" id="embedProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="embedProgressFill"></div>
+                        </div>
+                        <div class="progress-text" id="embedProgressText">Processing...</div>
+                    </div>
+                    <div class="error-message" id="embedError"></div>
+                </form>
+
+                <div class="result-container" id="embedResult">
+                    <div class="result-title">Result</div>
+                    <img id="watermarkedImage" class="result-image">
+                    <div class="alpha-display">
+                        <div class="alpha-display-label">Alpha Value</div>
+                        <div class="alpha-display-value" id="embedAlphaValue">-</div>
+                    </div>
+                    <button class="btn" onclick="downloadImage('watermarkedImage', 'watermarked_image.png')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Extract Section -->
+            <div class="section">
+                <div class="section-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h2 class="section-title">Extract Watermark</h2>
+
+                <form id="extractForm">
+                    <div class="form-group">
+                        <label class="form-label">Watermarked Image</label>
+                        <div class="file-upload-area" id="watermarkedInputArea">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Click or drag image here</p>
+                            <p class="upload-subtext">PNG, JPG up to 10MB</p>
+                            <input type="file" id="watermarkedImageInput" class="file-input" name="watermarked" accept="image/*">
+                        </div>
+                        <div class="file-name" id="watermarkedInputFileName"></div>
+                        <img id="watermarkedInputPreview" class="image-preview">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Original Cover Image</label>
+                        <div class="file-upload-area" id="originalImageArea">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Click or drag image here</p>
+                            <p class="upload-subtext">PNG, JPG up to 10MB</p>
+                            <input type="file" id="originalImageInput" class="file-input" name="original" accept="image/*">
+                        </div>
+                        <div class="file-name" id="originalImageFileName"></div>
+                        <img id="originalImagePreview" class="image-preview">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Alpha Value</label>
+                        <div class="input-group">
+                            <input type="number" id="alphaInput" name="alpha" step="0.01" min="0.01" max="1.0" value="0.1" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" id="extractBtn">Extract Watermark</button>
+                    <div class="progress-container" id="extractProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="extractProgressFill"></div>
+                        </div>
+                        <div class="progress-text" id="extractProgressText">Processing...</div>
+                    </div>
+                    <div class="error-message" id="extractError"></div>
+                </form>
+
+                <div class="result-container" id="extractResult">
+                    <div class="result-title">Extracted Watermark</div>
+                    <img id="extractedImage" class="result-image">
+                    <button class="btn" onclick="downloadImage('extractedImage', 'extracted_watermark.png')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File upload handling
+        function setupFileUpload(uploadAreaId, fileInputId, previewId, fileNameId) {
+            const uploadArea = document.getElementById(uploadAreaId);
+            const fileInput = document.getElementById(fileInputId);
+
+            uploadArea.addEventListener('click', () => fileInput.click());
+
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length) {
+                    fileInput.files = files;
+                    handleFileSelect(fileInput, previewId, fileNameId);
+                }
+            });
+
+            fileInput.addEventListener('change', () => {
+                handleFileSelect(fileInput, previewId, fileNameId);
+            });
+        }
+
+        function handleFileSelect(fileInput, previewId, fileNameId) {
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                document.getElementById(fileNameId).textContent = file.name;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById(previewId);
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        setupFileUpload('coverUploadArea', 'coverImage', 'coverPreview', 'coverFileName');
+        setupFileUpload('watermarkUploadArea', 'watermarkImage', 'watermarkPreview', 'watermarkFileName');
+        setupFileUpload('watermarkedInputArea', 'watermarkedImageInput', 'watermarkedInputPreview', 'watermarkedInputFileName');
+        setupFileUpload('originalImageArea', 'originalImageInput', 'originalImagePreview', 'originalImageFileName');
+
+        // Embed watermark
+        document.getElementById('embedForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const embedBtn = document.getElementById('embedBtn');
+            const embedError = document.getElementById('embedError');
+            const embedProgress = document.getElementById('embedProgress');
+            const embedResult = document.getElementById('embedResult');
+
+            embedBtn.disabled = true;
+            embedBtn.classList.add('processing');
+            embedError.style.display = 'none';
+            embedProgress.style.display = 'block';
+            embedResult.style.display = 'none';
+
+            try {
+                const response = await fetch('/embed', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('watermarkedImage').src = 'data:image/png;base64,' + data.image;
+                    document.getElementById('embedAlphaValue').textContent = data.alpha.toFixed(2);
+                    embedResult.style.display = 'block';
+                } else {
+                    embedError.textContent = data.error || 'An error occurred';
+                    embedError.style.display = 'block';
+                }
+            } catch (error) {
+                embedError.textContent = error.message || 'An error occurred';
+                embedError.style.display = 'block';
+            } finally {
+                embedBtn.disabled = false;
+                embedBtn.classList.remove('processing');
+                embedProgress.style.display = 'none';
+            }
+        });
+
+        // Extract watermark
+        document.getElementById('extractForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const extractBtn = document.getElementById('extractBtn');
+            const extractError = document.getElementById('extractError');
+            const extractProgress = document.getElementById('extractProgress');
+            const extractResult = document.getElementById('extractResult');
+
+            extractBtn.disabled = true;
+            extractBtn.classList.add('processing');
+            extractError.style.display = 'none';
+            extractProgress.style.display = 'block';
+            extractResult.style.display = 'none';
+
+            try {
+                const response = await fetch('/extract', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('extractedImage').src = 'data:image/png;base64,' + data.image;
+                    extractResult.style.display = 'block';
+                } else {
+                    extractError.textContent = data.error || 'An error occurred';
+                    extractError.style.display = 'block';
+                }
+            } catch (error) {
+                extractError.textContent = error.message || 'An error occurred';
+                extractError.style.display = 'block';
+            } finally {
+                extractBtn.disabled = false;
+                extractBtn.classList.remove('processing');
+                extractProgress.style.display = 'none';
+            }
+        });
+
+        function downloadImage(imageId, filename) {
+            const link = document.createElement('a');
+            link.href = document.getElementById(imageId).src;
+            link.download = filename;
+            link.click();
+        }
+    </script>
+</body>
+</html>

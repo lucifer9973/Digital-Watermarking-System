@@ -21,7 +21,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def create_app():
-    app = Flask(__name__)
+    # Get the directory of the current file
+    template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+    app = Flask(__name__, template_folder=template_dir)
 
     # Configure logging based on environment
     log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
